@@ -4,16 +4,15 @@ pipeline:
     commands: 
       - go get github.com/joho/godotenv/cmd/godotenv
       - go get github.com/drone/drone/drone
-      - find /
 
   publish:
     image: plugins/docker
     repo: cyberplant/drone
     secrets: [ docker_username, docker_password ]
     tag: [ latest ]
-    when:
-      branch: master
-      event: push
+    #when:
+    #  branch: master
+    #  event: push
 
   notify:
     image: plugins/gitter
