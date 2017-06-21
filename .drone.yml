@@ -9,9 +9,9 @@ pipeline:
 
   publish:
     image: plugins/docker
-    repo: cyberplant/drone
+    repo: luar/drone
     secrets: [ docker_username, docker_password ]
-    tag: [ latest ]
+    # tag: [ latest ]
     #when:
     #  branch: master
     #  event: push
