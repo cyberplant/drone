@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/cyberplant/drone
+  path: src/github.com/drone/drone
 
 pipeline:
   test:
@@ -30,8 +30,8 @@ pipeline:
     image: golang:1.8
     commands: sh .drone.sh
     secrets: [ ssh_key ]
-    when:
-      event: [ push, tag ]
+    # when:
+    # event: [ push, tag ]
 
   publish:
     image: plugins/docker
