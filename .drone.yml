@@ -16,7 +16,7 @@ pipeline:
       - DATABASE_DRIVER=postgres
       - DATABASE_CONFIG=host=postgres user=postgres dbname=postgres sslmode=disable
     commands:
-      - go test github.com/cyberplant/drone/store/datastore
+      - go test github.com/drone/drone/store/datastore
 
   test_mysql:
     image: golang:1.8
@@ -24,7 +24,7 @@ pipeline:
       - DATABASE_DRIVER=mysql
       - DATABASE_CONFIG=root@tcp(mysql:3306)/test?parseTime=true
     commands:
-      - go test github.com/cyberplant/drone/store/datastore
+      - go test github.com/drone/drone/store/datastore
 
   build:
     image: golang:1.8

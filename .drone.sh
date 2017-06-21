@@ -23,3 +23,5 @@ git clone git@github.com:drone/drone-enterprise.git extras
 
 # build a static binary with the build number and extra features.
 go build -ldflags '-extldflags "-static" -X github.com/cyberplant/drone/version.VersionDev=build.'${DRONE_BUILD_NUMBER} -tags extras -o release/drone github.com/cyberplant/drone
+
+go get github.com/joho/godotenv/cmd/godotenv

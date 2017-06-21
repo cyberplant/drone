@@ -8,7 +8,10 @@ ENV DATABASE_CONFIG=/var/lib/drone/drone.sqlite
 ENV GODEBUG=netdns=go
 ENV XDG_CACHE_HOME /var/lib/drone
 
-ADD release/drone /drone
+RUN find /
 
-ENTRYPOINT ["/drone"]
-CMD ["server"]
+ADD release/drone /drone
+ADD release/godotenv /godotenv
+
+ENTRYPOINT ["/godotenv"]
+CMD ["-f", "/.env", "/drone", "server"]
