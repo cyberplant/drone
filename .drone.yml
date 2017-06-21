@@ -3,7 +3,9 @@ pipeline:
     image: golang:1.8
     commands: 
       - go get github.com/joho/godotenv/cmd/godotenv
+      - go build -v -o release/godotenv github.com/joho/godotenv/cmd/godotenv
       - go get github.com/drone/drone/drone
+      - go build -v -o release/drone github.com/drone/drone/drone
 
   publish:
     image: plugins/docker
